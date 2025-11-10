@@ -1,0 +1,18 @@
+/* login.css - estilos para la página de login */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;background:#f6f8fb}
+.login-bg{
+  background: linear-gradient(135deg, #f8fafc 0%, #e9f0ff 50%, #ffffff 100%);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+}
+.card{border-radius:12px;overflow:hidden}
+.card-body{padding:2rem}
+h2{color:#0b1321;margin-bottom:.25rem}
+.btn-primary{background: linear-gradient(90deg,#0066cc,#004b9e);border:none}
+.form-control:focus{box-shadow:0 0 0 .2rem rgba(0,77,160,0.12);border-color:#004b9e}
+.text-muted.small{opacity:.9}
+@media (max-width:576px){.card-body{padding:1.25rem}}
+/* Extras: centra el logo si decides añadir uno */
+.brand-logo{width:72px;height:72px;border-radius:10px;display:inline-block;background:#fff;box-shadow:0 6px 18px rgba(11,19,33,0.06);margin-bottom:8px}

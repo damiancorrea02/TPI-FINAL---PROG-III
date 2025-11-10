@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - Sistema de Alquiler de Autos</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos locales -->
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-bg">
+    <div class="container">
+      <div class="row justify-content-center align-items-center min-vh-100">
+        <div class="col-md-6 col-lg-5">
+          <div class="card shadow-sm">
+            <div class="card-body p-4">
+              <div class="text-center mb-4">
+                <h2 class="fw-bold">Cental Rentals</h2>
+                <p class="text-muted small">Accede a tu cuenta para gestionar reservas</p>
+              </div>
+
+              <form id="loginForm" action="/login" method="POST" novalidate>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Correo electrónico</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="usuario@ejemplo.com" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="password" class="form-label">Contraseña</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña" required>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="remember" name="remember">
+                    <label class="form-check-label" for="remember">Recordarme</label>
+                  </div>
+                  <a href="#" class="small">¿Olvidaste la contraseña?</a>
+                </div>
+
+                <div class="d-grid mb-3">
+                  <button type="submit" class="btn btn-primary btn-lg">Entrar</button>
+                </div>
+
+                <p class="text-center small text-muted mb-0">¿No tienes cuenta? <a href="#">Regístrate</a></p>
+              </form>
+            </div>
+          </div>
+          <p class="text-center text-muted mt-3 small">Uso autorizado para clientes de Cental Rentals</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nota: el JS para validación y mostrar/ocultar contraseña lo añadirás tú más tarde. -->
+</body>
+</html>
