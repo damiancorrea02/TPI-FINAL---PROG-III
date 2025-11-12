@@ -1,13 +1,26 @@
-
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", sans-serif;
   background: #f6f8fb;
+}
+
+.admin-container {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--bs-gutter-y));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  flex-direction: row;
+  gap: 15px;
 }
 
 .admin-bg {
@@ -28,7 +41,7 @@ html, body {
 
 h2 {
   color: #0b1321;
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
 .btn-primary {
@@ -37,12 +50,12 @@ h2 {
 }
 
 .form-control:focus {
-  box-shadow: 0 0 0 .2rem rgba(0, 77, 160, 0.12);
+  box-shadow: 0 0 0 0.2rem rgba(0, 77, 160, 0.12);
   border-color: #003a7a;
 }
 
 .text-muted.small {
-  opacity: .9;
+  opacity: 0.9;
 }
 
 @media (max-width: 576px) {
@@ -58,4 +71,22 @@ h2.fw-bold {
 
 p.text-muted.small {
   font-size: 0.9rem;
+}
+
+#users-list {
+  max-width: fit-content;
+  max-height: 30rem;
+  overflow-y: scroll;
+  padding: 2rem;
+}
+
+#users-list p {
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#users-list p:hover {
+  background-color: lightgray;
+cursor: default;
 }

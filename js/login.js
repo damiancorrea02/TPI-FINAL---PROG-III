@@ -11,7 +11,7 @@ loginButton.addEventListener("click", async (e) => {
   const password = passInp.value;
   const email = emailInp.value;
   if (!password.trim() || !email.trim()) {
-    alert("Please enter all the data");
+    return alert("Please enter all the data");
   }
 
   userData.email = email;
@@ -21,7 +21,7 @@ loginButton.addEventListener("click", async (e) => {
   } else userData.isAdmin = false;
 
   // revisa si la cuenta ya existe
-  const usersResponse = await fetch(`${ENDPOINT}/Auth`);
+  const usersResponse = await fetch(`${ENDPOINT}/auth`);
   const users = await usersResponse.json();
 
   const exists = users.find((u) => u.email === email);
@@ -38,7 +38,7 @@ loginButton.addEventListener("click", async (e) => {
   }
   // sino, crea la cuenta y luego la guarda
   else {
-    const response = await fetch(`${ENDPOINT}/Auth`, {
+    const response = await fetch(`${ENDPOINT}/auth`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),
