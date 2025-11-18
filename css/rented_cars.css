@@ -9,6 +9,7 @@
 }
 
 .car-card {
+    max-width: 500px;
     background: #fff;
     border-radius: 12px;
     padding: 20px;
@@ -54,4 +55,19 @@
 .status.available {
     background: #37b24d;
     color: white;
+}
+
+.loading-state {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 40px 0;
+}
+
+.cancel-reservation {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
 }

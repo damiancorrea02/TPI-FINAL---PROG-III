@@ -103,15 +103,15 @@
                                     <div class="col-lg-6 fadeInLeft animated" data-animation="fadeInLeft" data-delay="1s" style="animation-delay: 1s;">
                                         <div class="bg-secondary rounded p-5">
                                             <h4 class="text-white mb-4">CONTINUE CAR RESERVATION</h4>
-                                            <form>
+                                            <form id="car-reservation">
                                                 <div class="row g-3">
                                                     <div class="col-12">
-                                                        <select class="form-select" aria-label="Default select example">
+                                                        <select class="form-select" aria-label="Default select example" id="car-type">
                                                             <option selected>Select Your Car type</option>
-                                                            <option value="1">VW Golf VII</option>
-                                                            <option value="2">Audi A1 S-Line</option>
-                                                            <option value="3">Toyota Camry</option>
-                                                            <option value="4">BMW 320 ModernLine</option>
+                                                            <option value="1">Mercedes Benz R3</option>
+                                                            <option value="2">Toyota Corolla Cross</option>
+                                                            <option value="3">Tesla Model S Plaid</option>
+                                                            <option value="4">Hyundai Kona Electric</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-12">
@@ -119,7 +119,7 @@
                                                             <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
                                                                 <span class="fas fa-map-marker-alt"></span> <span class="ms-1">Pick Up</span>
                                                             </div>
-                                                            <input class="form-control" type="text" placeholder="Enter a City or Airport" aria-label="Enter a City or Airport">
+                                                            <input id="pick-up" class="form-control" type="text" placeholder="Enter a City or Airport" aria-label="Enter a City or Airport">
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
@@ -128,7 +128,7 @@
                                                             <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
                                                                 <span class="fas fa-map-marker-alt"></span><span class="ms-1">Drop off</span>
                                                             </div>
-                                                            <input class="form-control" type="text" placeholder="Enter a City or Airport" aria-label="Enter a City or Airport">
+                                                            <input id="drop-off" class="form-control" type="text" placeholder="Enter a City or Airport (Optional)" aria-label="Enter a City or Airport">
                                                         </div>
                                                     </div>
                                                     <div class="col-12">
@@ -136,8 +136,8 @@
                                                             <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
                                                                 <span class="fas fa-calendar-alt"></span><span class="ms-1">Pick Up</span>
                                                             </div>
-                                                            <input class="form-control" type="date">
-                                                            <select class="form-select ms-3" aria-label="Default select example">
+                                                            <input id="pick-up-date" class="form-control" type="date">
+                                                            <select id="pick-up-time" class="form-select ms-3" aria-label="Default select example">
                                                                 <option selected>12:00AM</option>
                                                                 <option value="1">1:00AM</option>
                                                                 <option value="2">2:00AM</option>
@@ -154,8 +154,8 @@
                                                             <div class="d-flex align-items-center bg-light text-body rounded-start p-2">
                                                                 <span class="fas fa-calendar-alt"></span><span class="ms-1">Drop off</span>
                                                             </div>
-                                                            <input class="form-control" type="date">
-                                                            <select class="form-select ms-3" aria-label="Default select example">
+                                                            <input id="drop-off-date" class="form-control" type="date">
+                                                            <select id="drop-off-time" class="form-select ms-3" aria-label="Default select example">
                                                                 <option selected>12:00AM</option>
                                                                 <option value="1">1:00AM</option>
                                                                 <option value="2">2:00AM</option>
@@ -197,10 +197,10 @@
                                                     <div class="col-12">
                                                         <select class="form-select" aria-label="Default select example">
                                                             <option selected>Select Your Car type</option>
-                                                            <option value="1">VW Golf VII</option>
-                                                            <option value="2">Audi A1 S-Line</option>
-                                                            <option value="3">Toyota Camry</option>
-                                                            <option value="4">BMW 320 ModernLine</option>
+                                                            <option value="1">Mercedes Benz R3</option>
+                                                            <option value="2">Toyota Corolla Cross</option>
+                                                            <option value="3">Tesla Model S Plaid</option>
+                                                            <option value="4">Hyundai Kona Electric</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-12">

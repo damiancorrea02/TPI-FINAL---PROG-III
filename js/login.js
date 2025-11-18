@@ -33,6 +33,7 @@ loginButton.addEventListener("click", async (e) => {
 
   // si existe guarda la info en localstorage y redirecciona
   if (exists) {
+    userData.id = exists.id
     localStorage.setItem("user-data", JSON.stringify(userData));
     location.replace("/index.html");
   }
@@ -43,6 +44,8 @@ loginButton.addEventListener("click", async (e) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),
     });
+    const data = await response.json()
+    userData.id = data.id
     localStorage.setItem("user-data", JSON.stringify(userData));
     location.replace("/index.html");
   }

@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "name": "Mercedes Benz R3",
+    "image": "img/car-1.png",
+    "review": 4.5,
+    "pricePerDay": 99,
+    "seats": 4,
+    "transmission": "AT/MT",
+    "fuelType": "Petrol",
+    "year": 2015,
+    "gearbox": "AUTO",
+    "mileage": "27K"
+  },
+  {
+    "id": 2,
+    "name": "Toyota Corolla Cross",
+    "image": "img/car-2.png",
+    "review": 3.5,
+    "pricePerDay": 128,
+    "seats": 4,
+    "transmission": "AT/MT",
+    "fuelType": "Petrol",
+    "year": 2015,
+    "gearbox": "AUTO",
+    "mileage": "27K"
+  },
+  {
+    "id": 3,
+    "name": "Tesla Model S Plaid",
+    "image": "img/car-3.png",
+    "review": 3.8,
+    "pricePerDay": 170,
+    "seats": 4,
+    "transmission": "AT/MT",
+    "fuelType": "Petrol",
+    "year": 2015,
+    "gearbox": "AUTO",
+    "mileage": "27K"
+  },
+  {
+    "id": 4,
+    "name": "Hyundai Kona Electric",
+    "image": "img/car-4.png",
+    "review": 4.8,
+    "pricePerDay": 187,
+    "seats": 4,
+    "transmission": "AT/MT",
+    "fuelType": "Petrol",
+    "year": 2015,
+    "gearbox": "AUTO",
+    "mileage": "27K"
+  }
+]
