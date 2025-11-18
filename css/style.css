@@ -643,4 +643,10 @@
 }
 /*** copyright end ***/
 
+/* Make only the Rented Cars nav link turn project red on hover (keeps other nav links unchanged) */
+.navbar-light .navbar-nav .nav-link.rented-nav:hover,
+.navbar-light .navbar-nav .nav-link.rented-nav:focus {
+    color: #ff4d4d !important;
+}
+
 
