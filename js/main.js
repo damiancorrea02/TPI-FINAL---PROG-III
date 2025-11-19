@@ -74,6 +74,7 @@ const ENDPOINT = "https://69125f3052a60f10c82173d4.mockapi.io/tpi";
 // cambiar contenido del "login button" dependiendo si hay sesion iniciada o no
 const navBar = document.getElementById("navbarCollapse");
 const loginButton = document.getElementById("login-header");
+const navBarCollapse = document.getElementById("navbarLinks")
 // formulario de reservación
 const carForm = document.getElementById("car-reservation");
 const carTypeInput = document.getElementById("car-type");
@@ -89,8 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let today = new Date();
   today = today.toISOString().split("T")[0];
 
-  pickUpDateInput.setAttribute("min", today);
-  dropOffDateInput.setAttribute("min", today);
+  if (pickUpDateInput) pickUpDateInput.setAttribute("min", today);
+  if (dropOffDateInput) dropOffDateInput.setAttribute("min", today);
   const userData = localStorage.getItem("user-data");
   const parsedUserData = JSON.parse(userData);
   // si el user esta logeado, cambiar la funcionalidad del boton para que funcione como un logout
@@ -99,8 +100,17 @@ document.addEventListener("DOMContentLoaded", () => {
     loginButton.addEventListener("click", (e) => {
       e.preventDefault();
       localStorage.removeItem("user-data");
-      location.reload();
+      location.replace("/index.html");
     });
+  }
+
+  // si el user esta logeado, mostrar el rented cars link
+  if (userData) {
+    const rentedCarsLink = document.createElement("a")
+    rentedCarsLink.innerHTML = "Rented Cars"
+    rentedCarsLink.classList = "nav-item nav-link"
+    rentedCarsLink.href = "rentedcars.html"
+    navBarCollapse.appendChild(rentedCarsLink)
   }
 
   // si el user esta logeado y es admin, se habilita la funcion de manejar usuarios como admin
@@ -113,40 +123,42 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // hacer formulario de creacion funcional
-  carForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const mandatoryFieldsFilled =
-      carTypeInput.value &&
-      pickUpInput.value &&
-      pickUpDateInput.value &&
-      pickUpTimeInput.value &&
-      dropOffDateInput.value &&
-      dropOffTimeInput.value;
-    if (!mandatoryFieldsFilled) {
-      return alert("Please fill in all required fields to continue.");
-    }
-    // recopilacion de los datos del formulario
-    const formData = {
-      user_id: parsedUserData.id,
-      car_id: carTypeInput.value,
-      pick_up_location: pickUpInput.value,
-      drop_off_location: dropOffInput.value || pickUpInput.value,
-      pick_up_date: pickUpDateInput.value,
-      pick_up_time: pickUpTimeInput.value,
-      drop_off_date: dropOffDateInput.value,
-      drop_off_time: dropOffTimeInput.value,
-    };
-    // guardar la renta en el backend
-    try {
-      const response = await fetch(`${ENDPOINT}/rented_cars`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      alert("The reservation was saved.")
-    } catch (error) {
-      console.error(error)
-      alert("Error saving the reservation");
-    }
-  });
+  if (carForm) {
+    carForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const mandatoryFieldsFilled =
+        carTypeInput.value &&
+        pickUpInput.value &&
+        pickUpDateInput.value &&
+        pickUpTimeInput.value &&
+        dropOffDateInput.value &&
+        dropOffTimeInput.value;
+      if (!mandatoryFieldsFilled) {
+        return alert("Please fill in all required fields to continue.");
+      }
+      // recopilacion de los datos del formulario
+      const formData = {
+        user_id: parsedUserData.id,
+        car_id: carTypeInput.value,
+        pick_up_location: pickUpInput.value,
+        drop_off_location: dropOffInput.value || pickUpInput.value,
+        pick_up_date: pickUpDateInput.value,
+        pick_up_time: pickUpTimeInput.value,
+        drop_off_date: dropOffDateInput.value,
+        drop_off_time: dropOffTimeInput.value,
+      };
+      // guardar la renta en el backend
+      try {
+        const response = await fetch(`${ENDPOINT}/rented_cars`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+        alert("The reservation was saved.")
+      } catch (error) {
+        console.error(error)
+        alert("Error saving the reservation");
+      }
+    });
+  }
 });
